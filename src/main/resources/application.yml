@@ -1,0 +1,31 @@
+spring:
+  freemarker:
+    settings:
+        auto_import: /spring.ftl as spring
+        template_update_delay : 0
+        default_encoding : UTF-8
+    cache: false
+    check-template-location: false
+    charset: UTF-8
+    expose-spring-macro-helpers: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_boot_demo?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123456
+  http:
+    multipart:
+      max-file-size: 10Mb
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  session:
+    store-type: none
+
+server:
+  port: 8082
+  session:
+    timeout: 30
+  ssl:
+    enabled: false
+mybatis:
+    type-aliases-package: net.anjero.reader
