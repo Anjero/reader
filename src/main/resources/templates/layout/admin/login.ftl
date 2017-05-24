@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>登录 | Dayin Admin</title>
+  <title>登录 | ${app.shortName}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -27,11 +27,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="javascript:;"><b>Admin</b>Datayin</a>
+    <a href="javascript:;"><b>${app.shortName}</b>${app.company}</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Datayin 管理平台登录</p>
+    <p class="login-box-msg">${app.name}</p>
 
     <form action="/adminlogin" method="post">
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="net.anjero.reader.module.folder.mapper.FoldersMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="net.anjero.reader.module.folder.pojo.Folders">
+        <result column="id" property="id"/>
+        <result column="file_name" property="fileName"/>
+        <result column="in_time" property="inTime"/>
+        <result column="modify_date" property="modifyDate"/>
+        <result column="is_folder" property="isFolder"/>
+        <result column="md5" property="md5"/>
+        <result column="bite_size" property="biteSize"/>
+        <result column="file_size" property="fileSize"/>
+        <result column="file_path" property="filePath"/>
+        <result column="path_type" property="pathType"/>
+        <result column="pid" property="pid"/>
+        <result column="user_id" property="userId"/>
+        <result column="status" property="status"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `file_name`,
+        `in_time`,
+        `modify_date`,
+        `is_folder`,
+        `md5`,
+        `bite_size`,
+        `file_size`,
+        `file_path`,
+        `path_type`,
+        `pid`,
+        `user_id`,
+        `status`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO folders (
+            `id`,
+            `file_name`,
+            `in_time`,
+            `modify_date`,
+            `is_folder`,
+            `md5`,
+            `bite_size`,
+            `file_size`,
+            `file_path`,
+            `path_type`,
+            `pid`,
+            `user_id`,
+            `status`
+        ) VALUES (
+            #{pojo.id},
+            #{pojo.fileName},
+            #{pojo.inTime},
+            #{pojo.modifyDate},
+            #{pojo.isFolder},
+            #{pojo.md5},
+            #{pojo.biteSize},
+            #{pojo.fileSize},
+            #{pojo.filePath},
+            #{pojo.pathType},
+            #{pojo.pid},
+            #{pojo.userId},
+            #{pojo.status}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO folders
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.fileName!=null"> `file_name`,</if>
+            <if test="pojo.inTime!=null"> `in_time`,</if>
+            <if test="pojo.modifyDate!=null"> `modify_date`,</if>
+            <if test="pojo.isFolder!=null"> `is_folder`,</if>
+            <if test="pojo.md5!=null"> `md5`,</if>
+            <if test="pojo.biteSize!=null"> `bite_size`,</if>
+            <if test="pojo.fileSize!=null"> `file_size`,</if>
+            <if test="pojo.filePath!=null"> `file_path`,</if>
+            <if test="pojo.pathType!=null"> `path_type`,</if>
+            <if test="pojo.pid!=null"> `pid`,</if>
+            <if test="pojo.userId!=null"> `user_id`,</if>
+            <if test="pojo.status!=null"> `status`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.fileName!=null">#{pojo.fileName},</if>
+            <if test="pojo.inTime!=null">#{pojo.inTime},</if>
+            <if test="pojo.modifyDate!=null">#{pojo.modifyDate},</if>
+            <if test="pojo.isFolder!=null">#{pojo.isFolder},</if>
+            <if test="pojo.md5!=null">#{pojo.md5},</if>
+            <if test="pojo.biteSize!=null">#{pojo.biteSize},</if>
+            <if test="pojo.fileSize!=null">#{pojo.fileSize},</if>
+            <if test="pojo.filePath!=null">#{pojo.filePath},</if>
+            <if test="pojo.pathType!=null">#{pojo.pathType},</if>
+            <if test="pojo.pid!=null">#{pojo.pid},</if>
+            <if test="pojo.userId!=null">#{pojo.userId},</if>
+            <if test="pojo.status!=null">#{pojo.status},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO folders (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.fileName},
+            #{pojo.inTime},
+            #{pojo.modifyDate},
+            #{pojo.isFolder},
+            #{pojo.md5},
+            #{pojo.biteSize},
+            #{pojo.fileSize},
+            #{pojo.filePath},
+            #{pojo.pathType},
+            #{pojo.pid},
+            #{pojo.userId},
+            #{pojo.status}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE folders
+        <set>
+            <if test="pojo.id != null"> `id` = #{pojo.id}, </if>
+            <if test="pojo.fileName != null"> `file_name` = #{pojo.fileName}, </if>
+            <if test="pojo.inTime != null"> `in_time` = #{pojo.inTime}, </if>
+            <if test="pojo.modifyDate != null"> `modify_date` = #{pojo.modifyDate}, </if>
+            <if test="pojo.isFolder != null"> `is_folder` = #{pojo.isFolder}, </if>
+            <if test="pojo.md5 != null"> `md5` = #{pojo.md5}, </if>
+            <if test="pojo.biteSize != null"> `bite_size` = #{pojo.biteSize}, </if>
+            <if test="pojo.fileSize != null"> `file_size` = #{pojo.fileSize}, </if>
+            <if test="pojo.filePath != null"> `file_path` = #{pojo.filePath}, </if>
+            <if test="pojo.pathType != null"> `path_type` = #{pojo.pathType}, </if>
+            <if test="pojo.pid != null"> `pid` = #{pojo.pid}, </if>
+            <if test="pojo.userId != null"> `user_id` = #{pojo.userId}, </if>
+            <if test="pojo.status != null"> `status` = #{pojo.status} </if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+</mapper>
+

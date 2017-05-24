@@ -1,0 +1,29 @@
+app:
+  name: Datayin 管理平台登录
+  website:  http://datayin.com
+  short_name: <b>ADMIN</b>Datayin
+  company: 车映 datayin.com
+  icp:  沪ICP备16007128号-1
+filepath:
+  url: http://localhost/html/
+  catalogue: /Users/anjero/work/dev/webstorm/html/
+page_no:  1
+page_size : 20
+
+foldercc:
+  base_path: /Users/anjero/work/dev/folderManger
+  due: due
+  temp : temp
+##开发想着配置
+develop:
+  ##平台
+  platform:
+    #微信
+    wechat:
+      xxx:
+      xxxj:
+    #车映
+    datayin:
+      mail: anjero@anjero.cn
+      admin: anjero@anjero.cn
+

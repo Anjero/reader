@@ -23,6 +23,6 @@ public class AccountController {
 
     @GetMapping("/reg")
     public String register() {
-        return "";
+        return "demo";
     }
 }

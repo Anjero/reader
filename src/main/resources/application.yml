@@ -4,12 +4,13 @@ spring:
         auto_import: /spring.ftl as spring
         template_update_delay : 0
         default_encoding : UTF-8
+
     cache: false
     check-template-location: false
     charset: UTF-8
     expose-spring-macro-helpers: true
   datasource:
-    url: jdbc:mysql://localhost:3306/spring_boot_demo?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/reader_db?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
     username: root
     password: 123456
   http:
@@ -21,11 +22,25 @@ spring:
   session:
     store-type: none
 
+  config:
+    name: application,config
+
 server:
-  port: 8082
+  port: 8088
   session:
     timeout: 30
   ssl:
     enabled: false
 mybatis:
     type-aliases-package: net.anjero.reader
+
+global:
+  base:
+    secret_folder: secret_folder
+  app:
+    website: http://anjero.NET
+    company: Anjero Demo Test
+    name: Spring Boot Demo Project
+    short_name: SBDP
+
+

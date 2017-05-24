@@ -1,6 +1,7 @@
 package net.anjero.reader.core.interceptor;
 
 
+import net.anjero.reader.components.utils.IpUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -31,7 +32,7 @@ public class WebInterceptor implements HandlerInterceptor {
             throws Exception {
         long startTime = (Long) request.getAttribute("startTime");
         String actionName = request.getRequestURI();
-        String clientIp = getIpAddrByRequest(request);
+        String clientIp = IpUtils.getIpAddrByRequest(request);
         StringBuffer logstring = new StringBuffer();
         logstring.append(clientIp).append("|").append(actionName).append("|");
         Map<String, String[]> parmas = request.getParameterMap();
@@ -62,17 +63,4 @@ public class WebInterceptor implements HandlerInterceptor {
         return true;
     }
 
-    private static String getIpAddrByRequest(HttpServletRequest request) {
-        String ip = request.getHeader("x-forwarded-for");
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("Proxy-Client-IP");
-        }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("WL-Proxy-Client-IP");
-        }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getRemoteAddr();
-        }
-        return ip;
-    }
 }

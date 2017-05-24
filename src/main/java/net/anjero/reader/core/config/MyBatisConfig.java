@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
  */
 
 @org.springframework.context.annotation.Configuration
-@MapperScan("com.example.module")
+@MapperScan("net.anjero.reader")
 public class MyBatisConfig implements ConfigurationCustomizer{
 
 
